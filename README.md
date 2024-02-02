@@ -1,3 +1,3 @@
 # fcs-html-template
-### Name:
-### Period:
+### Name: Derek Yang
+### Period: 9
