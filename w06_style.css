@@ -1,0 +1,29 @@
+html {
+  background-color: lightgreen;
+  font-family: "Times";
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  font-size: 100px;
+  font-weight: bold;
+  color: forestgreen;
+}
+
+body {
+  width: 800px;
+  border: solid 2px blue;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+}
