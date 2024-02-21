@@ -1,0 +1,27 @@
+body {
+  width: 100%
+}
+
+ul.bar {
+  padding: 20px;
+  background-color: lightblue;
+  width: 95%;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 1.5em;
+  color: brown;
+}
+
+li.nav {
+  display: inline;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+li.current{
+  color: yellow;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
