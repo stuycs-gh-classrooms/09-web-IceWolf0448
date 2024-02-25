@@ -61,3 +61,15 @@ a {
   background-color: #00800021;
   margin: auto;
 }
+
+.text{
+  font-size: 18px;
+}
+
+.txt-size {
+  width: 40%;
+}
+
+.italics {
+  font-style: italic;
+}
