@@ -6,22 +6,42 @@ body {
   width: 98%;
   font-size: 20px;
   color: #5e5e5e;
-  display: block;
 }
 
 p {
+  display: block;
+}
+
+p.normal {
   width: 100%;
   max-width: 620px;
   display: block;
+}
+
+div.text {
+  width: 25%;
+  height: 100%;
 }
 
 img {
   display: block;
 }
 
-div {
-  width: 100%;
+div.image-text1 {
+  width: 80%;
+  max-width: 800px;
+}
+
+div.in-line {
   display: inline-block;
+  vertical-align: middle;
+}
+
+div.text {
+  width: 100%;
+  min-width: 200px;
+  max-width: 350px;
+  background-color: #caf880;
 }
 
 nav {
