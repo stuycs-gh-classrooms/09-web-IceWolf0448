@@ -62,12 +62,42 @@ a {
   margin: auto;
 }
 
+.assassin-text {
+  width: 400px;
+  background-color: #5b008036;
+}
+
+.fighter-text {
+  width: 400px;
+  background-color: #ff000036;
+}
+
+.support-text {
+  width: 400px;
+  background-color: #00ff3036;
+}
+
+.mage-text {
+  width: 400px;
+  background-color: #0075ff36;
+}
+
+.marksman-text {
+  width: 400px;
+  background-color: #fffc0036;
+}
+
+.tank-text {
+  width: 400px;
+  background-color: #fa9b004f;
+}
+
 .text{
   font-size: 18px;
 }
 
 .txt-size {
-  width: 40%;
+  width: 250px;
 }
 
 .italics {
