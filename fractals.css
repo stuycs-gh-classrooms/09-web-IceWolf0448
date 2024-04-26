@@ -1,0 +1,32 @@
+html {
+  font-family: Times;
+  text-align: center;
+  background-color: #fbf3e4;
+  align-content: center
+}
+
+div {
+  border: 2px solid #8a4b00;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: #333;
+  width: max-content;
+  margin: 0 auto;
+}
+
+pre {
+  text-align: left;
+}
+
+p {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 36px; /* Font size */
+  color: #2c3e50; /* Text color */
+  letter-spacing: 1px; /* Letter spacing */
+  margin-bottom: 20px; /* Margin bottom */
+}

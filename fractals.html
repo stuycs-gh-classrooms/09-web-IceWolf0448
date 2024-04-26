@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="utf-8">
+      <title>Fractals, Yeah...</title>
+      <link rel="stylesheet" href="Fractals.css">
+    </head>
+  </head>
+    <body>
+        <h1>Koch Curve</h1>
+        <div><img src="site\images\koch.png" width="500">
+        <p>This is a standard draw_koch(t, 4, 20) Koch Curve.</p></div>
+        <div><img src="site\images\koch_variation.png" width="500">
+        <p>My first goal in creating this new fractal was to make
+          it look cooler, and personally, I think making it more narrow the <br>
+          higher it goes is a good idea. Then, I used randrange to assign
+          it a random shade a blue for each section, not it looks like some <br>
+          cultish banner.</p></div>
+    </body>
+    <pre><code>
+      def draw_koch2(t, depth, length):
+          if(depth > 1):
+              t.color(randrange(100),randrange(100),randrange(155)+100)
+              p = 60 * (1.05**depth)
+              draw_koch2(t, depth - 1, length)
+              t.lt(p)
+              draw_koch2(t, depth - 1, length)
+              t.rt(p*2)
+              draw_koch2(t, depth - 1, length)
+              t.lt(p)
+              draw_koch2(t, depth - 1, length)
+          else:
+              t.fd(length)
+    </code></pre>
+    <hr>
+    <body>
+        <h1>Serpinski Triangle</h1>
+        <div><img src="site\images\triangle.png" width="500">
+        <p>This is a standard sierpinski(t, 5, 200) Serpinski Triangle.</p></div>
+        <div><img src="site\images\triangle_variation.png" width="500">
+        <p>I don't know if it is just me, but looking at the sierpinsky triangle
+          always reminds of the Triforce from Legends of Zelda. That is <br>
+          what my first modification is, filling in all the small triangles. Then
+          I saw this cool sierpinski triangle variation as a hexagon, which I<br> accomplished
+          by calling it 6 times and rotaiton 60 degrees. As an extra twist, I made them all change
+          colors after the first one,<br> so the original is always the Triforce</p></div>
+    </body>
+    <pre><code>
+      def triangle2(t, size):
+          t.begin_fill()
+          t.lt(60)
+          t.fd(size)
+          t.rt(120)
+          t.fd(size)
+          t.rt(120)
+          t.fd(size)
+          t.rt(180)
+          t.end_fill()
+
+      def sierpinski2(t, depth, size, scale_factor=1):
+          t.fillcolor("#d4ce46")
+          t.pencolor("#0d9263")
+          i = 0
+          while i < 6:
+              helper(t, 4, 200)
+              t.rt(60)
+              i += 1
+              t.fillcolor(randrange(255),randrange(255),randrange(255))
+
+
+      def helper(t, depth, size, scale_factor=1):
+          if depth == 1:
+              triangle2(t, size)
+          else:
+              helper(t, depth-1, size/2)
+              t.fd(size/2)
+              helper(t, depth-1, size/2)
+              t.bk(size/2)
+              t.lt(60)
+              t.fd(size/2)
+              t.rt(60)
+              helper(t, depth-1, size/2)
+              t.rt(120)
+              t.fd(size/2)
+              t.lt(120)
+    </code></pre>
+    <hr>
+    <body>
+        <h1>Fractal Tree</h1>
+        <div><img src="site\images\tree.png" width="500">
+        <p>This is a standard tree(t, 5, 50, 25) Fractal Tree.</p></div>
+        <div><img src="site\images\tree_variation.png" width="500">
+        <p>First I did a variatiion I always wanted to try, I made the width of the line
+          wider from the bottom to the thinner from the top, sort of like<br>
+          a real tree splitting into branches. Then I wanted all the branches to have a random color.
+          However, to add an extra twist, I want all <br>branches with the same layer to share a color.
+          This forced me to pre-make an array of the arranged depth that stores exactly what color<br> each layer
+          should be.</p></div>
+    </body>
+    <pre><code>
+      def tree2(t, depth, size, angle):
+          arr = []
+          i = 0
+          while(i <= depth):
+              i+=1
+              a = []
+              a.append(randrange(255))
+              a.append(randrange(255))
+              a.append(randrange(255))
+              arr.append(a)
+          helper2(t, 5, 50, 20, arr)
+
+      def helper2(t, depth, size, angle, arr):
+          t.width((depth+1) * 3)
+          t.color(arr[depth][0], arr[depth][1], arr[depth][2])
+          if depth == 0:
+              t.fd(size)
+              t.bk(size)
+          else:
+              t.fd(size)
+              t.rt(angle)
+              helper2(t, depth-1, size, angle, arr)
+              t.width((depth+1) * 3)
+              t.color(arr[depth][0], arr[depth][1], arr[depth][2])
+              t.lt(2 * angle)
+              helper2(t, depth-1, size, angle, arr)
+              t.width((depth+1) * 3)
+              t.color(arr[depth][0], arr[depth][1], arr[depth][2])
+              t.rt(angle)
+              t.bk(size)
+    </code></pre>
+</html>
